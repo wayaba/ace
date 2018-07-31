@@ -51,7 +51,4 @@ USER aceuser
 WORKDIR /home/aceuser
 
 # Set entrypoint to run management script
-CMD ["/bin/bash", "-c", "/usr/local/bin/ace_license_check.sh && 
-						export ODBCSYSINI=/opt/ibm/ace-11.0.0.0/server/ODBC/unixodbc/odbcinst.ini &&
-						export ODBCINI=/opt/ibm/ace-11.0.0.0/server/ODBC/unixodbc/odbc.ini &&
-						IntegrationServer -w /home/aceuser/ace-server --console-log"]
+CMD ["/bin/bash", "-c", "/usr/local/bin/ace_license_check.sh && export ODBCSYSINI=/opt/ibm/ace-11.0.0.0/server/ODBC/unixodbc/odbcinst.ini && export ODBCINI=/opt/ibm/ace-11.0.0.0/server/ODBC/unixodbc/odbc.ini && IntegrationServer -w /home/aceuser/ace-server --console-log"]
