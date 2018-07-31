@@ -51,8 +51,7 @@ USER aceuser
 WORKDIR /home/aceuser
 
 # Hago el export de las variable globales para poder usar el odbc.ini
-RUN export ODBCINI=/opt/ibm/ace-11.0.0.0/server/ODBC/unixodbc/odbc.ini
-RUN export ODBCSYSINI=/opt/ibm/ace-11.0.0.0/server/ODBC/unixodbc/odbcinst.ini
+CMD ["/bin/bash", "-c", "export ODBCSYSINI=/opt/ibm/ace-11.0.0.0/server/ODBC/unixodbc/odbcinst.ini && export ODBCINI=/opt/ibm/ace-11.0.0.0/server/ODBC/unixodbc/odbc.ini"]
 
 # Set entrypoint to run management script
 CMD ["/bin/bash", "-c", "/usr/local/bin/ace_license_check.sh && IntegrationServer -w /home/aceuser/ace-server --console-log"]
